@@ -1,0 +1,35 @@
+{
+  "urn": "urn:mediator:bahmni_fhir_mediator",
+  "version": "1.0.0",
+  "name": "Bahmni FHIR Mediator",
+  "description": "Mediador que escucha respuestas del feed, consulta OpenMRS, traduce conceptos y genera FHIR IPS",
+  "defaultChannelConfig": [
+    {
+      "name": "Bahmni FHIR Mediator Channel",
+      "urlPattern": "^/entryfeed$",
+      "routes": [
+        {
+          "name": "Bahmni FHIR Mediator Route",
+          "host": "54.232.60.170",
+          "path": "/",
+          "port": "4000",
+          "primary": true,
+          "type": "http"
+        }
+      ],
+      "allow": ["admin"],
+      "methods": ["POST"],
+      "type": "http"
+    }
+  ],
+  "endpoints": [
+    {
+      "name": "Bahmni FHIR Mediator Endpoint",
+      "host": "54.232.60.170",
+      "path": "/",
+      "port": "4000",
+      "primary": true,
+      "type": "http"
+    }
+  ]
+}
